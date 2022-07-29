@@ -133,6 +133,8 @@ const int pingPin = 7; // Trigger Pin of Ultrasonic Sensor
     pinMode(echoPin, INPUT);
     duration1 = pulseIn(echoPin, HIGH);
     sd1=duration1*0.034/2;
+    Serial.print("upper ");
+    Serial.print(sd1);
    // inches1 = microsecondsToInches(duration1);
     cm1 = microsecondsToCentimeters(duration1);
    /* if(sd1<= 15)
@@ -156,6 +158,8 @@ const int pingPin = 7; // Trigger Pin of Ultrasonic Sensor
     pinMode(echoPin2, INPUT);
     duration = pulseIn(echoPin2, HIGH);
     sd=duration*0.034/2;
+    Serial.print("lower ");
+    Serial.print(sd);
   //  inches = microsecondsToInches(duration);
     cm = microsecondsToCentimeters(duration);
      if (sd > 15 && sd1 > 15)
@@ -163,7 +167,8 @@ const int pingPin = 7; // Trigger Pin of Ultrasonic Sensor
      digitalWrite(Buzzer1, LOW);
      noTone(Buzzer1);
       digitalWrite(In1,LOW);
-    // Serial.println(sd1);
+    Serial.println(sd1);
+    
     }
     else if(sd <= 15 && sd1<=15)
     {
